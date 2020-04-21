@@ -20,7 +20,7 @@ public class Stack {
 
     public void printItems() {
         Iterator<ListItem> iterator = list.descendingIterator();
-        while(iterator.hasNext()) System.out.println(iterator.next()); //Tulosta pinon sisältö muuttamatta pinoa
+        while (iterator.hasNext()) System.out.println(iterator.next()); //Tulosta pinon sisältö muuttamatta pinoa
     }
 
 
