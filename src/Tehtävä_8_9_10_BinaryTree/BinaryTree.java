@@ -30,6 +30,7 @@ public class BinaryTree {
             if (root.right() == null) setRight(new BinaryTree(aData));
             else root.right().insert(aData);
         }
+        root.setHeight(Math.max(root.left() != null ? root.left().root.getHeight() + 1 : 0, root.right() != null ? root.right().root.getHeight() + 1 : 0));
     }
 
     public BinaryTree find(String aData) {
@@ -68,7 +69,7 @@ public class BinaryTree {
 
     public void preOrder() {
         if (root != null) {
-            System.out.println(root.getData() + ',');
+            System.out.printf("Data: %s , Left Node: %s, Right Node: %s, Height: %d,\n", root.getData(), root.left() != null ? root.left().root.getData() : "None", root.right() != null ? root.right().root.getData() : "None", root.getHeight());
             if (root.left() != null) // pääseeekö vasemmalle?
                 root.left().preOrder();
             if (root.right() != null) // pääseekö oikealle?

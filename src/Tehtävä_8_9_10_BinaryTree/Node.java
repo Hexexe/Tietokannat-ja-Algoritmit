@@ -13,6 +13,7 @@ public class Node {
     private String data;
     private BinaryTree left;
     private BinaryTree right;
+    private int height;
 
     public Node(String value) {
         data = value;
@@ -39,6 +40,8 @@ public class Node {
     public void setRight(BinaryTree tree) {
         right = tree;
     }
+    public int getHeight() { return height; }
+    public void setHeight(int height) { this.height = height; }
 
     @Override
     public String toString() { return data; }
