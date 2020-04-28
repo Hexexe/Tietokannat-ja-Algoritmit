@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package Tehtävä_8_BinaryTree;
+package Tehtävä_8_9_10_BinaryTree;
 
 /**
  *
@@ -26,6 +26,7 @@ public class Node {
     public String getData() {
         return data;
     }
+    public void setData(String data) { this.data = data; }
     public BinaryTree left() {
         return left;
     }

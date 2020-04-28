@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package Tehtävä_8_BinaryTree;
+package Tehtävä_8_9_10_BinaryTree;
 
 /**
  *
