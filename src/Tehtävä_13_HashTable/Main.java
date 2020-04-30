@@ -22,8 +22,8 @@ public class Main {
                 case 2:
                     try {
                         System.out.println("Hae data arvon perusteella:");
-                        String s = hashT.find(scan.next());
-                        System.out.printf(s == null ? "Dataa ei löytynyt\n" : "Data %s löytyi\n", s);
+                        String s = hashT.find(scan.next()) != null ? "Data löytyi" : "Dataa ei löytynyt";
+                        System.out.println(s);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
