@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        BinaryHeap bh = new BinaryHeap(100);
+        BinaryHeap bh = new BinaryHeap(10);
         int i;
         int choice;
         do {
@@ -27,7 +27,7 @@ public class Main {
                     break;
                 case 2:
                     try {
-                        System.out.println("Pienin elementti : " + bh.remove());
+                        System.out.println("Pienin elementti poistettu : " + bh.remove());
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }

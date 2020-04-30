@@ -1,11 +1,12 @@
 package Tehtävä_12_BinaryHeap;
 
+import java.util.Arrays;
+
 class BinaryHeap {
 
     private int[] Heap;
     private int size;
     private int maxsize;
-
     private static final int FRONT = 1;
 
     public BinaryHeap(int maxsize) {
@@ -18,7 +19,6 @@ class BinaryHeap {
     private int parent(int pos) { return pos / 2; }
     private int leftChild(int pos) { return (2 * pos); }
     private int rightChild(int pos) { return (2 * pos) + 1; }
-
     private boolean isLeaf(int pos) { return pos >= (size / 2) && pos <= size; }
 
     private void swap(int fpos, int spos) {
@@ -51,14 +51,20 @@ class BinaryHeap {
             current = parent(current);
         }
     }
-    public void print() { for (int i = 1; i <= size / 2; i++) { System.out.println(" PARENT : " + Heap[i] + " LEFT CHILD : " + Heap[2 * i] + " RIGHT CHILD :" + Heap[2 * i + 1]); } }
+    public void print() {
+        for (int i = 1; i <= size / 2; i++) {
+            System.out.println(" PARENT : " + Heap[i] + " LEFT CHILD : " + Heap[2 * i] + " RIGHT CHILD :" + Heap[2 * i + 1]);
+        }
+    }
 
     public void minHeap() { for (int pos = (size / 2); pos >= 1; pos--) { minHeapify(pos); } }
 
     public int remove() {
         int popped = Heap[FRONT];
         Heap[FRONT] = Heap[size--];
+        Heap[size+1] = 0;
         minHeapify(FRONT);
+        minHeap();
         return popped;
     }
 }
