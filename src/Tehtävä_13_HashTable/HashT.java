@@ -26,7 +26,8 @@ public class HashT {
 
     public String find(String s) {
         int v = Math.abs(s.hashCode()) % intel.length;
-        if (intel[v % intel.length].equals(s)) { return intel[v]; }
+        if (intel[v] == null) { return null; }
+        if (intel[v].equals(s)) { return intel[v]; }
         for (int i = 0; i < size; i++) { if(intel[i].equals(s)) return intel[i]; }
         return null;
     }
