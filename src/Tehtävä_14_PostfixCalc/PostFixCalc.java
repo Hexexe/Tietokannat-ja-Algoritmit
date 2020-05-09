@@ -5,7 +5,7 @@ import java.util.Stack;
 public class PostFixCalc {
 
     private Stack<Double> stack = new Stack<>();
-    double val1, val2;
+    double val1, val2, vastaus;
 
     public double vastaus(String s) {
         System.out.println(s);
@@ -33,7 +33,10 @@ public class PostFixCalc {
                     System.out.println("jakolasku 2 ylintä");
                     val1 = stack.pop();
                     val2 = stack.pop();
-                    if (val2 == 0) { System.out.println("ei voi jakaa nollalla"); return 0; }
+                    if (val2 == 0) {
+                        System.out.println("ei voi jakaa nollalla");
+                        return 0;
+                    }
                     stack.push(val2 / val1);
                     System.out.println(stack);
                     break;
@@ -43,7 +46,8 @@ public class PostFixCalc {
                     System.out.println(stack);
             }
         }
-        System.out.println("lopputulos\n");
-        return stack.pop();
+        vastaus = stack.pop();
+        System.out.printf("lopputulos: %.2f\n",vastaus);
+        return vastaus;
     }
 }
